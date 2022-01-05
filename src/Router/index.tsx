@@ -32,6 +32,11 @@ export const routes: RouteConfig[] = [
     path: '/NotFound',
     component: lazy(() => import(/* webpackChunkName: "NotFound" */ 'pages/NotFound')),
   },
+  {
+    name: 'HelloWorld',
+    path: '/HelloWorld',
+    component: lazy(() => import(/* webpackChunkName: "NotFound" */ 'pages/HelloWorld')),
+  }
 ];
 
 export default function Router() {
