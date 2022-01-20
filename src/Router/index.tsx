@@ -49,7 +49,9 @@ export const routes: RouteConfig[] = [
   {
     name: 'HelloWorld',
     path: '/HelloWorld',
-    component: lazy(() => import(/* webpackChunkName: "NotFound" */ 'pages/HelloWorld')),
+    Element: lazy(
+      () => import(/* webpackChunkName: "HelloWorld" */ 'pages/HelloWorld'),
+    )
   }
 ];
 
