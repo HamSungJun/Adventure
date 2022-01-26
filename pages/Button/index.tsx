@@ -30,6 +30,9 @@ export default function Index() {
       <div>
         <h1>Loading</h1>
       </div>
+      <div>
+        <h1>Size</h1>
+      </div>
     </>
   );
 }
