@@ -1,5 +1,9 @@
 import Button from "@/Components/Button";
 
+const imgStyle = {
+  width: '14px',
+  height: '11px'
+}
 export default function Index() {
   return (
     <>
@@ -7,27 +11,24 @@ export default function Index() {
         <h1> Basic usage</h1>
         <div>
           <Button>Default</Button>
-          <Button type="round">Round</Button>
-          <Button type="circle">
-            <div
-              style={{
-                width: 14 + "px",
-                height: 14 + "px",
-                backgroundColor: "black",
-              }}
-            ></div>
-            {/* <i className="fas"></i> */}
-          </Button>
+          <Button shape="plain">Plain</Button>
+          <Button shape="round">Round</Button>
         </div>
       </div>
       <div>
         <h1> Disabled Button</h1>
+        <div>
+          <Button disabled>Default</Button>
+          <Button shape="plain" disabled>Plain</Button>
+          <Button shape="round" disabled>Round</Button>
+        </div>
       </div>
       <div>
-        <h1> Text Button</h1>
+        <h1> Autofocus</h1>
+        <Button autofocus>오토포커스</Button>
       </div>
       <div>
-        <h1> Icon Button</h1>
+        <h1>Loading</h1>
       </div>
     </>
   );
