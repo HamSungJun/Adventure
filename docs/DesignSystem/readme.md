@@ -1,53 +1,20 @@
-# Adventure Design System - Color
+# Adventure Design System
+
+- https://material.io/design
+- https://www.notion.so/toss-design-system-959822692bec4f879450e361c623cf2a
+- https://socarframe.socar.kr/8bb3aba4a/p/5857a5-socar-frame
+- https://ridi.design/
+- https://airbnb.design/cereal/introduction/
+- https://atlassian.design/
 
 ## Considerations
 
-- 메인 브랜드 컬러 정의
+- Color
 
-    - 메인 컬러
-    
-    - 보조 컬러
+- Scale & Space
 
-- UI 컬러 정의
-
-    - Web Forms
-    
-    - CSS Pseudo-Classes
-
-- 시맨틱 컬러 정의
-
-    - Primary
-    
-    - Success
-    
-    - Warning
-    
-    - Danger
-
-- 레이아웃 요소 컬러 정의
-
-    - Header
-    
-    - Navigation
-    
-    - Sidebar
-    
-    - Content
-    
-    - Footer
-    
-- 컬러 팔레트 정의
-
-    - 음영과 색조
-    
-    - RGB, HEX, HSL
-
-- 웹 콘텐츠 접근성 가이드라인 준수
-
-    - 스크린 리더의 동작
-    
-    - 색약, 색맹
+- Typography
 
 ## References
 
-- https://brunch.co.kr/@thinkaboutlove/288
+- https://story.pxd.co.kr/1434
