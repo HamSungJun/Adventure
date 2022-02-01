@@ -4,9 +4,9 @@
 
 - 메인 브랜드 컬러 정의
 
-    - 메인 컬러
+    - 메인 컬러 (Primary)
     
-    - 보조 컬러
+    - 보조 컬러 (Secondary)
 
 - UI 컬러 정의
 
@@ -14,9 +14,17 @@
     
     - CSS Pseudo-Classes
 
+    - Text
+
+    - Background
+
+    - Error
+
 - 시맨틱 컬러 정의
 
     - Primary
+
+    - Secondary
     
     - Success
     
@@ -44,10 +52,18 @@
 
 - 웹 콘텐츠 접근성 가이드라인 준수
 
-    - 스크린 리더의 동작
-    
+    - 색상 대비
+
     - 색약, 색맹
+
+    - 스크린 리더의 동작
+
+- 다크 모드 구현
 
 ## References
 
 - https://brunch.co.kr/@thinkaboutlove/288
+
+- https://material.io/design/color/the-color-system.html#color-usage-and-palettes
+
+- https://atlassian.design/foundations/color/
