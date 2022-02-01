@@ -21,6 +21,10 @@ export default function Index() {
           <Button disabled>Default</Button>
           <Button shape="plain" disabled>Plain</Button>
           <Button shape="round" disabled>Round</Button>
+          <Button>
+            <img src="https://a.com" /> 
+            {/* React.creatElement의 리턴 */}
+          </Button>
         </div>
       </div>
       <div>

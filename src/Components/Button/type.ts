@@ -7,7 +7,7 @@ type ButtonSize = "small" | "medium" | "large";
 export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   type?: ButtonNativeType;
   shape?: ButtonShapes;
-  children?: any;
+  children?: string | JSX.Element;
   disabled?: boolean;
   autofocus?: boolean;
 }
