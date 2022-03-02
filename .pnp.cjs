@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.16.7"],
             ["@babel/preset-typescript", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.16.7"],
             ["@babel/runtime", "npm:7.16.7"],
+            ["@fullhuman/postcss-purgecss", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.1.3"],
             ["@jest/globals", "npm:27.4.6"],
             ["@mdx-js/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:1.6.22"],
             ["@storybook/addon-actions", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.4.15"],
@@ -3371,6 +3372,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["js-yaml", "npm:3.14.1"],
             ["minimatch", "npm:3.0.4"],
             ["strip-json-comments", "npm:3.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@fullhuman/postcss-purgecss", [
+        ["npm:4.1.3", {
+          "packageLocation": "./.yarn/cache/@fullhuman-postcss-purgecss-npm-4.1.3-fbde3f89ad-898ff0eaec.zip/node_modules/@fullhuman/postcss-purgecss/",
+          "packageDependencies": [
+            ["@fullhuman/postcss-purgecss", "npm:4.1.3"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.1.3", {
+          "packageLocation": "./.yarn/__virtual__/@fullhuman-postcss-purgecss-virtual-ce3427f6a7/0/cache/@fullhuman-postcss-purgecss-npm-4.1.3-fbde3f89ad-898ff0eaec.zip/node_modules/@fullhuman/postcss-purgecss/",
+          "packageDependencies": [
+            ["@fullhuman/postcss-purgecss", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.1.3"],
+            ["@types/postcss", null],
+            ["postcss", "npm:8.4.7"],
+            ["purgecss", "npm:4.1.3"]
+          ],
+          "packagePeers": [
+            "@types/postcss",
+            "postcss"
           ],
           "linkType": "HARD",
         }]
@@ -7869,6 +7893,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/preset-react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.16.7"],
             ["@babel/preset-typescript", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.16.7"],
             ["@babel/runtime", "npm:7.16.7"],
+            ["@fullhuman/postcss-purgecss", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.1.3"],
             ["@jest/globals", "npm:27.4.6"],
             ["@mdx-js/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:1.6.22"],
             ["@storybook/addon-actions", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.4.15"],
@@ -19410,6 +19435,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/punycode-npm-2.1.1-26eb3e15cf-823bf443c6.zip/node_modules/punycode/",
           "packageDependencies": [
             ["punycode", "npm:2.1.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["purgecss", [
+        ["npm:4.1.3", {
+          "packageLocation": "./.yarn/cache/purgecss-npm-4.1.3-9099a5bb50-508613f904.zip/node_modules/purgecss/",
+          "packageDependencies": [
+            ["purgecss", "npm:4.1.3"],
+            ["commander", "npm:8.3.0"],
+            ["glob", "npm:7.2.0"],
+            ["postcss", "npm:8.4.7"],
+            ["postcss-selector-parser", "npm:6.0.9"]
           ],
           "linkType": "HARD",
         }]
