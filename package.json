@@ -15,7 +15,8 @@
     "build": "yarn webpack --config webpack.prod.js",
     "prepare": "yarn husky install",
     "validate": "yarn run lint && yarn run type-check && yarn run test",
-    "analyze": "yarn webpack --config webpack.analyze.js"
+    "analyze": "yarn webpack --config webpack.analyze.js",
+    "postbuild": "purgecss --css static/css/*.css --content public/index.html --output static/css"
   },
   "keywords": [],
   "author": "",
