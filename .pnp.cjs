@@ -92,7 +92,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:12.3.2"],
             ["mini-css-extract-plugin", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:2.5.3"],
             ["node-notifier", "npm:10.0.0"],
-            ["postcss", "npm:8.4.5"],
+            ["postcss", "npm:8.4.7"],
             ["postcss-loader", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.2.1"],
             ["postcss-scss", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.0.3"],
             ["prettier", "npm:2.5.1"],
@@ -7920,7 +7920,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lint-staged", "npm:12.3.2"],
             ["mini-css-extract-plugin", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:2.5.3"],
             ["node-notifier", "npm:10.0.0"],
-            ["postcss", "npm:8.4.5"],
+            ["postcss", "npm:8.4.7"],
             ["postcss-loader", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.2.1"],
             ["postcss-scss", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.0.3"],
             ["prettier", "npm:2.5.1"],
@@ -8693,7 +8693,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fraction.js", "npm:4.1.2"],
             ["normalize-range", "npm:0.1.2"],
             ["picocolors", "npm:1.0.0"],
-            ["postcss", "npm:8.4.5"],
+            ["postcss", "npm:8.4.7"],
             ["postcss-value-parser", "npm:4.2.0"]
           ],
           "packagePeers": [
@@ -17619,6 +17619,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nanoid", "npm:3.2.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:3.3.1", {
+          "packageLocation": "./.yarn/cache/nanoid-npm-3.3.1-bdd760bee0-4ef0969e1b.zip/node_modules/nanoid/",
+          "packageDependencies": [
+            ["nanoid", "npm:3.3.1"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["nanomatch", [
@@ -18771,6 +18778,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map-js", "npm:1.0.2"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:8.4.7", {
+          "packageLocation": "./.yarn/cache/postcss-npm-8.4.7-12e4add2ee-a515ed3662.zip/node_modules/postcss/",
+          "packageDependencies": [
+            ["postcss", "npm:8.4.7"],
+            ["nanoid", "npm:3.3.1"],
+            ["picocolors", "npm:1.0.0"],
+            ["source-map-js", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["postcss-flexbugs-fixes", [
@@ -18828,7 +18845,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/webpack", null],
             ["cosmiconfig", "npm:7.0.1"],
             ["klona", "npm:2.0.5"],
-            ["postcss", "npm:8.4.5"],
+            ["postcss", "npm:8.4.7"],
             ["semver", "npm:7.3.5"],
             ["webpack", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:5.67.0"]
           ],
@@ -19037,7 +19054,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["postcss-scss", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.0.3"],
             ["@types/postcss", null],
-            ["postcss", "npm:8.4.5"]
+            ["postcss", "npm:8.4.7"]
           ],
           "packagePeers": [
             "@types/postcss",
