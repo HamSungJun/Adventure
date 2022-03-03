@@ -52,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@swc/core-linux-x64-musl", "npm:1.2.133"],\
             ["@testing-library/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:12.1.2"],\
             ["@testing-library/react-hooks", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.0.2"],\
+            ["@types/glob", "npm:7.2.0"],\
             ["@types/jest", "npm:27.4.1"],\
             ["@types/node", "npm:17.0.10"],\
             ["@types/prettier", "npm:2.4.4"],\
@@ -82,6 +83,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-promise", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:5.2.0"],\
             ["eslint-plugin-react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.28.0"],\
             ["eslint-plugin-react-hooks", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.3.0"],\
+            ["glob", "npm:7.2.0"],\
             ["html-webpack-plugin", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:5.5.0"],\
             ["husky", "npm:7.0.4"],\
             ["identity-obj-proxy", "npm:3.0.0"],\
@@ -94,6 +96,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-loader", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.2.1"],\
             ["postcss-scss", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.0.2"],\
             ["prettier", "npm:2.5.1"],\
+            ["purgecss-webpack-plugin", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.1.3"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:17.0.2"],\
             ["react-router-dom", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.2.1"],\
@@ -10388,6 +10391,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@swc/core-linux-x64-musl", "npm:1.2.133"],\
             ["@testing-library/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:12.1.2"],\
             ["@testing-library/react-hooks", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.0.2"],\
+            ["@types/glob", "npm:7.2.0"],\
             ["@types/jest", "npm:27.4.1"],\
             ["@types/node", "npm:17.0.10"],\
             ["@types/prettier", "npm:2.4.4"],\
@@ -10418,6 +10422,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-promise", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:5.2.0"],\
             ["eslint-plugin-react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.28.0"],\
             ["eslint-plugin-react-hooks", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.3.0"],\
+            ["glob", "npm:7.2.0"],\
             ["html-webpack-plugin", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:5.5.0"],\
             ["husky", "npm:7.0.4"],\
             ["identity-obj-proxy", "npm:3.0.0"],\
@@ -10430,6 +10435,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss-loader", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.2.1"],\
             ["postcss-scss", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.0.2"],\
             ["prettier", "npm:2.5.1"],\
+            ["purgecss-webpack-plugin", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.1.3"],\
             ["react", "npm:17.0.2"],\
             ["react-dom", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:17.0.2"],\
             ["react-router-dom", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.2.1"],\
@@ -22274,6 +22280,43 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/punycode-npm-2.1.1-26eb3e15cf-823bf443c6.zip/node_modules/punycode/",\
           "packageDependencies": [\
             ["punycode", "npm:2.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["purgecss", [\
+        ["npm:4.1.3", {\
+          "packageLocation": "./.yarn/cache/purgecss-npm-4.1.3-9099a5bb50-508613f904.zip/node_modules/purgecss/",\
+          "packageDependencies": [\
+            ["purgecss", "npm:4.1.3"],\
+            ["commander", "npm:8.3.0"],\
+            ["glob", "npm:7.2.0"],\
+            ["postcss", "npm:8.4.7"],\
+            ["postcss-selector-parser", "npm:6.0.9"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["purgecss-webpack-plugin", [\
+        ["npm:4.1.3", {\
+          "packageLocation": "./.yarn/cache/purgecss-webpack-plugin-npm-4.1.3-dcd95e4b02-d944f23765.zip/node_modules/purgecss-webpack-plugin/",\
+          "packageDependencies": [\
+            ["purgecss-webpack-plugin", "npm:4.1.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.1.3", {\
+          "packageLocation": "./.yarn/__virtual__/purgecss-webpack-plugin-virtual-e792a82938/0/cache/purgecss-webpack-plugin-npm-4.1.3-dcd95e4b02-d944f23765.zip/node_modules/purgecss-webpack-plugin/",\
+          "packageDependencies": [\
+            ["purgecss-webpack-plugin", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:4.1.3"],\
+            ["@types/webpack", null],\
+            ["purgecss", "npm:4.1.3"],\
+            ["webpack", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:5.65.0"],\
+            ["webpack-sources", "npm:3.2.3"]\
+          ],\
+          "packagePeers": [\
+            "@types/webpack",\
+            "webpack"\
           ],\
           "linkType": "HARD"\
         }]\
