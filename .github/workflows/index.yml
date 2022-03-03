@@ -26,10 +26,6 @@ jobs:
       - name: Corepack Enable
         run: corepack enable
 
-      # 패키니 매니저를 Yarn 으로 이용합니다.
-      - name: Yarn Install
-        run: npm install yarn -g
-
       - name: Yarn Set Version From Sources
         run: yarn set version from sources
 
