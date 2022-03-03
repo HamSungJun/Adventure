@@ -5958,7 +5958,7 @@ __metadata:
     classnames: 2.3.1
     core-js: 3.20.1
     css-loader: 6.5.1
-    esbuild-linux-64: 0.14.21
+    esbuild-linux-64: ^0.14.24
     esbuild-loader: 2.18.0
     eslint: 7.32.0
     eslint-config-prettier: 8.3.0
@@ -9320,17 +9320,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-linux-64@npm:0.14.21":
-  version: 0.14.21
-  resolution: "esbuild-linux-64@npm:0.14.21"
-  checksum: 65ee098a36dd501aa6124104d3ae53895ce99415fefb7559bdf749b46c0067dbde43561d7184094c49037f00db00d63fbd1a0045a76f2bb0f2d5ca4a6d0884be
-  conditions: os=linux & cpu=x64
-  languageName: node
-  linkType: hard
-
-"esbuild-linux-64@npm:0.14.24":
+"esbuild-linux-64@npm:0.14.24, esbuild-linux-64@npm:^0.14.24":
   version: 0.14.24
   resolution: "esbuild-linux-64@npm:0.14.24"
+  checksum: 0e2ba805f99a9595d77dd2d5fada9349213a6a57daaa91697aa831a470ed9e114ebd3daf1b5b0d949f526ff414bf41c6e9472e15703fcacdd7a6c26a7ab811e0
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard

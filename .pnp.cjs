@@ -69,7 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["classnames", "npm:2.3.1"],\
             ["core-js", "npm:3.20.1"],\
             ["css-loader", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.5.1"],\
-            ["esbuild-linux-64", "npm:0.14.21"],\
+            ["esbuild-linux-64", "npm:0.14.24"],\
             ["esbuild-loader", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:2.18.0"],\
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-prettier", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:8.3.0"],\
@@ -10405,7 +10405,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["classnames", "npm:2.3.1"],\
             ["core-js", "npm:3.20.1"],\
             ["css-loader", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:6.5.1"],\
-            ["esbuild-linux-64", "npm:0.14.21"],\
+            ["esbuild-linux-64", "npm:0.14.24"],\
             ["esbuild-loader", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:2.18.0"],\
             ["eslint", "npm:7.32.0"],\
             ["eslint-config-prettier", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:8.3.0"],\
@@ -14596,13 +14596,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["esbuild-linux-64", [\
-        ["npm:0.14.21", {\
-          "packageLocation": "./.yarn/unplugged/esbuild-linux-64-npm-0.14.21-819f7ec971/node_modules/esbuild-linux-64/",\
-          "packageDependencies": [\
-            ["esbuild-linux-64", "npm:0.14.21"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:0.14.24", {\
           "packageLocation": "./.yarn/unplugged/esbuild-linux-64-npm-0.14.24-d73616c919/node_modules/esbuild-linux-64/",\
           "packageDependencies": [\
