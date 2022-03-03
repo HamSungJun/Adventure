@@ -15,7 +15,8 @@
     "build": "yarn webpack --config webpack.prod.js",
     "prepare": "yarn husky install",
     "validate": "yarn run lint && yarn run type-check && yarn run test",
-    "analyze": "yarn webpack --config webpack.analyze.js"
+    "analyze": "yarn webpack --config webpack.analyze.js",
+    "postbuild": "purgecss --css static/css/*.css --content public/index.html --output static/css"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "@babel/preset-react": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
     "@babel/runtime": "^7.16.7",
+    "@fullhuman/postcss-purgecss": "^4.1.3",
     "@jest/globals": "^27.4.6",
     "@swc/core": "^1.2.133",
     "@swc/core-darwin-arm64": "^1.2.135",
@@ -100,7 +102,7 @@
     "antd": "^4.18.4",
     "classnames": "^2.3.1",
     "immer": "^9.0.7",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.2.1",
