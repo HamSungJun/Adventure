@@ -1,0 +1,35 @@
+.carousel {
+  width: 500px;
+  padding: 0.75rem;
+  border: 1px solid black;
+  overflow: hidden;
+
+  .carousel__contents{
+    border: 1px dashed red;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.25s ease;
+  }
+
+  .carousel__controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.75rem;
+
+    .carousel__controls__button{
+      height: 1.5rem;
+      width: 1.5rem;
+      display: inline-block;
+
+      .button--prev{
+
+      }
+
+      .button__next{
+        
+      }
+    }
+  }
+}

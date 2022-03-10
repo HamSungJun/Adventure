@@ -1,0 +1,11 @@
+.carousel-slide-box{
+  white-space: nowrap;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 460px;
+
+  &:not(:first-child){
+    margin-left: 20px;
+  }
+}

@@ -48,6 +48,13 @@ export const routes: RouteConfig[] = [
     ),
   },
   {
+    name: "Carousel",
+    path: "/Carousel",
+    Element: lazy(
+      () => import(/* webpackChunkName: "Carousel" */ "pages/Carousel"),
+    ),
+  },
+  {
     name: "PlayGround",
     path: "/PlayGround",
     Element: lazy(
