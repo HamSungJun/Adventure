@@ -1,4 +1,11 @@
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import {
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState,
+  useMemo,
+  useCallback,
+} from "react";
 import { ICarouselProps } from "./types";
 import "./index.scss";
 
@@ -7,9 +14,9 @@ export default function Carousel({
   onResize,
   children,
 }: ICarouselProps) {
-  const [pageIndex, setPageIndex] = useState(0);
   const [translateX, setTranslateX] = useState(0);
-  const [translateDx, setTranslateDx] = useState(0);
+  const [pageIndex, setPageIndex] = useState(0);
+  const [slideCount, setSlideCount] = useState(0);
   const [prevDisabled, setPrevDisabled] = useState(true);
   const [nextDisabled, setNextDisabled] = useState(true);
 
@@ -26,56 +33,40 @@ export default function Carousel({
   };
 
   const onPrevSlideClick = () => {
-    setTranslateX(Math.min(0, translateX + translateDx));
+    setPageIndex(Math.max(0, pageIndex - 1));
   };
 
   const onNextSlideClick = () => {
-    setTranslateX(translateX - translateDx);
+    setPageIndex(Math.min(pageIndex + 1, slideCount));
   };
 
-  const updateTranslateDx = (slideWidth: number) => {
-    console.log(slideWidth);
-    setTranslateDx(slideWidth);
-  };
-
-  useEffect(() => {
-    const checkPrevButtonAvailable = () => {
-      setPrevDisabled(translateX === 0);
-    };
-
-    const checkNextButtonAvailable = () => {
-      if (
-        isRefsInitialized([
-          carouselRef,
-          carouselContentsRef,
-          carouselContentsInnerRef,
-        ])
-      ) {
-        const carouselClientWidth = carouselRef.current!.clientWidth;
-        const carouselContentsInnerScrollWidth =
-          carouselContentsInnerRef.current!.scrollWidth;
-        setNextDisabled(
-          carouselClientWidth >= carouselContentsInnerScrollWidth,
-        );
-      }
-    };
-    checkPrevButtonAvailable();
-    checkNextButtonAvailable();
-  }, [translateX, carouselRef, carouselContentsRef, carouselContentsInnerRef]);
-
-  useEffect(() => {
-    if (isRefsInitialized([carouselContentsRef])) {
-      updateTranslateDx(
-        parseFloat(getComputedStyle(carouselContentsRef.current!).width),
-      );
+  const moveSlideToView = useCallback((pageIndex: number) => {
+    if (!isRefsInitialized([carouselContentsInnerRef])) return;
+    const slideItem = carouselContentsInnerRef
+      .current!.querySelectorAll(".carousel-slide-box")
+      .item(pageIndex);
+    if (slideItem) {
+      slideItem.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
     }
-  }, [carouselContentsRef, carouselContentsRef.current?.clientWidth]);
+  }, []);
+
+  useEffect(() => {
+    if (isRefsInitialized([carouselContentsInnerRef])) {
+      setSlideCount(carouselContentsInnerRef.current!.childElementCount);
+      setNextDisabled(slideCount <= 1);
+    }
+  }, [slideCount, carouselContentsInnerRef]);
+
+  useEffect(() => {
+    moveSlideToView(pageIndex);
+  }, [pageIndex, slideCount, moveSlideToView]);
 
   useEffect(() => {
     const onWindowResize = () => {
-      updateTranslateDx(
-        parseFloat(getComputedStyle(carouselContentsRef.current!).width),
-      );
       onResize?.();
     };
     window.addEventListener("resize", onWindowResize);
@@ -89,7 +80,7 @@ export default function Carousel({
       <div ref={carouselContentsRef} className="carousel__contents">
         <div
           ref={carouselContentsInnerRef}
-          style={{ transform: `translateX(${translateX}px)` }}
+          style={{ transform: `translate3d(${translateX}, 0, 0)` }}
           className="carousel__contents__inner"
         >
           {children}
@@ -100,14 +91,14 @@ export default function Carousel({
           <button
             onClick={onPrevSlideClick}
             className="carousel__controls__button button--prev"
-            disabled={prevDisabled}
+            disabled={pageIndex === 0}
           >
             &lt;
           </button>
           <button
             onClick={onNextSlideClick}
             className="carousel__controls__button button--next"
-            disabled={nextDisabled}
+            disabled={pageIndex === slideCount - 1}
           >
             &gt;
           </button>

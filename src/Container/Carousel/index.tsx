@@ -15,7 +15,7 @@ export default function CarouselContainer() {
   };
   const createNovelCarouselSlide = () => {
     return Array.from(new Array(5), (_, i) => (
-      <div key={i} className="carousel-slide-box" data-page-index={i}>
+      <div key={i} className="carousel-slide-box">
         {Array.from(new Array(novelCountPerSlide), (_, i) => (
           <Novel key={i} />
         ))}
