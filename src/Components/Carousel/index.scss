@@ -1,15 +1,16 @@
 .carousel {
-  width: 500px;
-  padding: 0.75rem;
   border: 1px solid black;
-  overflow: hidden;
+  padding: 0.75rem;
 
   .carousel__contents{
-    border: 1px dashed red;
-    display: inline-block;
-    white-space: nowrap;
+    position: relative;
     overflow: hidden;
-    transition: all 0.25s ease;
+
+    .carousel__contents__inner{
+      display: flex;
+      flex-flow: row nowrap;
+      transition: all 0.25s ease;
+    }
   }
 
   .carousel__controls{

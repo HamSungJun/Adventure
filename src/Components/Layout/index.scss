@@ -52,10 +52,11 @@
 
     .Page-Wrap__Content__Main {
       display: flex;
-      flex: 1 0 auto;
+      flex: 1 1 0;
       align-items: center;
       justify-content: center;
       height: calc(100vh - 50px);
+      width: calc(100vw - 250px);
       padding: 30px;
 
       .Page-Wrap__Content__Main__Plate {

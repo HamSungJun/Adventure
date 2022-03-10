@@ -1,76 +1,118 @@
-import { useEffect, useRef, useState } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 import { ICarouselProps } from "./types";
 import "./index.scss";
-export default function Carousel({ children }: ICarouselProps) {
+
+export default function Carousel({
+  useControls = true,
+  onResize,
+  children,
+}: ICarouselProps) {
+  const [pageIndex, setPageIndex] = useState(0);
   const [translateX, setTranslateX] = useState(0);
+  const [translateDx, setTranslateDx] = useState(0);
   const [prevDisabled, setPrevDisabled] = useState(true);
   const [nextDisabled, setNextDisabled] = useState(true);
 
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const carouselContentsRef = useRef<HTMLDivElement | null>(null);
+  const carouselContentsInnerRef = useRef<HTMLDivElement | null>(null);
+
+  const isRefsInitialized = (
+    refs: MutableRefObject<HTMLDivElement | null>[],
+  ) => {
+    return refs.every(
+      (ref) => ref && ref.current && ref.current instanceof HTMLDivElement,
+    );
+  };
 
   const onPrevSlideClick = () => {
-    const nextTranslateX = Math.min(0, translateX + 400);
-    if (nextTranslateX === 0) {
-      setPrevDisabled(true);
-    }
-    setTranslateX(nextTranslateX);
+    setTranslateX(Math.min(0, translateX + translateDx));
   };
 
   const onNextSlideClick = () => {
-    const nextTranslateX = translateX - 400;
-    setTranslateX(nextTranslateX);
+    setTranslateX(translateX - translateDx);
+  };
+
+  const updateTranslateDx = (slideWidth: number) => {
+    console.log(slideWidth);
+    setTranslateDx(slideWidth);
   };
 
   useEffect(() => {
-    if (
-      carouselRef &&
-      carouselRef.current &&
-      carouselRef.current instanceof HTMLDivElement &&
-      carouselContentsRef &&
-      carouselContentsRef.current &&
-      carouselContentsRef.current instanceof HTMLDivElement
-    ) {
-      const carouselClientWidth = carouselRef.current.clientWidth;
-      const carouselContentsScrollWidth =
-        carouselContentsRef.current.scrollWidth;
-      if (carouselClientWidth < carouselContentsScrollWidth) {
-        setNextDisabled(false);
+    const checkPrevButtonAvailable = () => {
+      setPrevDisabled(translateX === 0);
+    };
+
+    const checkNextButtonAvailable = () => {
+      if (
+        isRefsInitialized([
+          carouselRef,
+          carouselContentsRef,
+          carouselContentsInnerRef,
+        ])
+      ) {
+        const carouselClientWidth = carouselRef.current!.clientWidth;
+        const carouselContentsInnerScrollWidth =
+          carouselContentsInnerRef.current!.scrollWidth;
+        setNextDisabled(
+          carouselClientWidth >= carouselContentsInnerScrollWidth,
+        );
       }
-    }
-  }, []);
+    };
+    checkPrevButtonAvailable();
+    checkNextButtonAvailable();
+  }, [translateX, carouselRef, carouselContentsRef, carouselContentsInnerRef]);
 
   useEffect(() => {
-    if (translateX < 0) {
-      setPrevDisabled(false);
+    if (isRefsInitialized([carouselContentsRef])) {
+      updateTranslateDx(
+        parseFloat(getComputedStyle(carouselContentsRef.current!).width),
+      );
     }
-  }, [translateX]);
+  }, [carouselContentsRef, carouselContentsRef.current?.clientWidth]);
+
+  useEffect(() => {
+    const onWindowResize = () => {
+      updateTranslateDx(
+        parseFloat(getComputedStyle(carouselContentsRef.current!).width),
+      );
+      onResize?.();
+    };
+    window.addEventListener("resize", onWindowResize);
+    return () => {
+      window.removeEventListener("resize", onWindowResize);
+    };
+  }, [onResize]);
 
   return (
     <div ref={carouselRef} className="carousel">
-      <div
-        ref={carouselContentsRef}
-        style={{ transform: `translateX(${translateX}px)` }}
-        className="carousel__contents"
-      >
-        {children}
-      </div>
-      <div className="carousel__controls">
-        <button
-          onClick={onPrevSlideClick}
-          className="carousel__controls__button button--prev"
-          disabled={prevDisabled}
+      <div ref={carouselContentsRef} className="carousel__contents">
+        <div
+          ref={carouselContentsInnerRef}
+          style={{ transform: `translateX(${translateX}px)` }}
+          className="carousel__contents__inner"
         >
-          &lt;
-        </button>
-        <button
-          onClick={onNextSlideClick}
-          className="carousel__controls__button button--next"
-          disabled={nextDisabled}
-        >
-          &gt;
-        </button>
+          {children}
+        </div>
       </div>
+      {useControls && (
+        <div className="carousel__controls">
+          <button
+            onClick={onPrevSlideClick}
+            className="carousel__controls__button button--prev"
+            disabled={prevDisabled}
+          >
+            &lt;
+          </button>
+          <button
+            onClick={onNextSlideClick}
+            className="carousel__controls__button button--next"
+            disabled={nextDisabled}
+          >
+            &gt;
+          </button>
+        </div>
+      )}
     </div>
   );
 }

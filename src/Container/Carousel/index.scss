@@ -1,11 +1,13 @@
 .carousel-slide-box{
-  white-space: nowrap;
-  display: inline-grid;
-  grid-template-columns: repeat(3, 1fr);
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  width: 460px;
+  width: 100%;
+}
 
-  &:not(:first-child){
-    margin-left: 20px;
+@media (max-width: 1500px) {
+  .carousel-slide-box{
+    grid-template-columns: repeat(3, 1fr);
   }
 }
