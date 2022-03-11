@@ -5,37 +5,125 @@ import "./index.scss";
 
 export default function CarouselContainer() {
   const [novelCountPerSlide, setNovelCountPerSlide] = useState(4);
-  const handleWindowResize = () => {
-    const windowInnerWidth = window.innerWidth;
-    if (windowInnerWidth > 1500) {
-      setNovelCountPerSlide(4);
-    } else {
-      setNovelCountPerSlide(3);
-    }
-  };
-  const createNovelCarouselSlide = () => {
-    return Array.from(new Array(5), (_, i) => (
-      <div key={i} className="carousel-slide-box">
-        {Array.from(new Array(novelCountPerSlide), (_, i) => (
+  const [novelCountPerSlide2, setNovelCountPerSlide2] = useState(6);
+
+  const createNovelCarouselSlide = (
+    pageCount: number,
+    itemCount: number,
+    slideClass: string,
+  ) => {
+    return Array.from(new Array(pageCount), (_, i) => (
+      <div key={i} className={slideClass}>
+        {Array.from(new Array(itemCount), (_, i) => (
           <Novel key={i} />
         ))}
       </div>
     ));
   };
   useEffect(() => {
+    const handleWindowResize = () => {
+      const windowInnerWidth = window.innerWidth;
+      if (windowInnerWidth > 1500) {
+        setNovelCountPerSlide(4);
+        setNovelCountPerSlide2(6);
+      } else {
+        setNovelCountPerSlide(3);
+        setNovelCountPerSlide2(5);
+      }
+    };
+    window.addEventListener("resize", handleWindowResize);
     handleWindowResize();
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
   }, []);
   return (
-    <div style={{ maxWidth: "1200px", width: "100%", display: "flex" }}>
-      <div style={{ width: "50%" }}>
-        <Carousel onResize={handleWindowResize}>
-          {createNovelCarouselSlide()}
+    <div
+      style={{
+        maxWidth: "1200px",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <div
+        style={{
+          width: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#f5f5f5",
+          padding: "20px",
+        }}
+      >
+        <h2>UseControls: false</h2>
+        <Carousel useControls={false}>
+          {createNovelCarouselSlide(
+            2,
+            novelCountPerSlide2,
+            "carousel-slide-box2",
+          )}
         </Carousel>
       </div>
-      <div style={{ width: "50%" }}>
-        <Carousel onResize={handleWindowResize}>
-          {createNovelCarouselSlide()}
+      <div
+        style={{
+          width: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#f5f5f5",
+          padding: "20px",
+        }}
+      >
+        <h2>SlideCount: 1</h2>
+        <Carousel>
+          {createNovelCarouselSlide(
+            1,
+            novelCountPerSlide2,
+            "carousel-slide-box2",
+          )}
         </Carousel>
+      </div>
+      <div
+        style={{
+          width: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#f5f5f5",
+          padding: "20px",
+        }}
+      >
+        <h2>ItemCount: 6 - 5</h2>
+        <Carousel>
+          {createNovelCarouselSlide(
+            2,
+            novelCountPerSlide2,
+            "carousel-slide-box2",
+          )}
+        </Carousel>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          marginBottom: "20px",
+          backgroundColor: "#f5f5f5",
+          padding: "20px",
+        }}
+      >
+        <div style={{ width: "50%" }}>
+          <Carousel>
+            {createNovelCarouselSlide(
+              5,
+              novelCountPerSlide,
+              "carousel-slide-box",
+            )}
+          </Carousel>
+        </div>
+        <div style={{ width: "50%" }}>
+          <Carousel>
+            {createNovelCarouselSlide(
+              5,
+              novelCountPerSlide,
+              "carousel-slide-box",
+            )}
+          </Carousel>
+        </div>
       </div>
     </div>
   );

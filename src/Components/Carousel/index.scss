@@ -7,9 +7,9 @@
     overflow: hidden;
 
     .carousel__contents__inner{
-      display: flex;
-      flex-flow: row nowrap;
-      transition: all 0.25s ease;
+      display: block;
+      white-space: nowrap;
+      transition: all 0.5s ease;
     }
   }
 
@@ -18,18 +18,35 @@
     align-items: center;
     justify-content: center;
     margin-top: 0.75rem;
+    height: 30px;
 
     .carousel__controls__button{
       height: 1.5rem;
       width: 1.5rem;
       display: inline-block;
 
-      .button--prev{
-
+      &.button--prev{
+        margin-right: 5px;
       }
 
-      .button__next{
-        
+      &.button--next{
+        margin-left: 5px;
+      }
+    }
+
+    .carousel__controls__thumb{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      cursor: pointer;
+
+      &:not(:first-child){
+        margin-left: 5px;
+      }
+
+      &.thumb--active {
+        background-color: darkgrey;
       }
     }
   }

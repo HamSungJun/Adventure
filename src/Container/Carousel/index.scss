@@ -1,13 +1,27 @@
 .carousel-slide-box{
-  flex: 0 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: inline-flex;
   gap: 20px;
   width: 100%;
+
+  &:not(:first-child){
+    margin-left: 20px;
+  }
+
+  div {
+    flex: 1;
+  }
 }
 
-@media (max-width: 1500px) {
-  .carousel-slide-box{
-    grid-template-columns: repeat(3, 1fr);
+.carousel-slide-box2{
+  display: inline-flex;
+  gap: 20px;
+  width: 100%;
+
+  &:not(:first-child){
+    margin-left: 20px;
+  }
+
+  div {
+    flex: 1;
   }
 }

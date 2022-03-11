@@ -3,22 +3,19 @@ import {
   useEffect,
   useRef,
   useState,
-  useMemo,
   useCallback,
 } from "react";
-import { ICarouselProps } from "./types";
+import { ICarouselControlsProps, ICarouselProps } from "./types";
+import classNames from "classnames";
 import "./index.scss";
 
 export default function Carousel({
   useControls = true,
-  onResize,
   children,
 }: ICarouselProps) {
   const [translateX, setTranslateX] = useState(0);
   const [pageIndex, setPageIndex] = useState(0);
   const [slideCount, setSlideCount] = useState(0);
-  const [prevDisabled, setPrevDisabled] = useState(true);
-  const [nextDisabled, setNextDisabled] = useState(true);
 
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const carouselContentsRef = useRef<HTMLDivElement | null>(null);
@@ -42,22 +39,16 @@ export default function Carousel({
 
   const moveSlideToView = useCallback((pageIndex: number) => {
     if (!isRefsInitialized([carouselContentsInnerRef])) return;
-    const slideItem = carouselContentsInnerRef
-      .current!.querySelectorAll(".carousel-slide-box")
-      .item(pageIndex);
-    if (slideItem) {
-      slideItem.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
+    const slideItem =
+      carouselContentsInnerRef.current!.children.item(pageIndex);
+    if (slideItem && slideItem instanceof HTMLElement) {
+      setTranslateX(slideItem.offsetLeft * -1);
     }
   }, []);
 
   useEffect(() => {
     if (isRefsInitialized([carouselContentsInnerRef])) {
       setSlideCount(carouselContentsInnerRef.current!.childElementCount);
-      setNextDisabled(slideCount <= 1);
     }
   }, [slideCount, carouselContentsInnerRef]);
 
@@ -65,22 +56,12 @@ export default function Carousel({
     moveSlideToView(pageIndex);
   }, [pageIndex, slideCount, moveSlideToView]);
 
-  useEffect(() => {
-    const onWindowResize = () => {
-      onResize?.();
-    };
-    window.addEventListener("resize", onWindowResize);
-    return () => {
-      window.removeEventListener("resize", onWindowResize);
-    };
-  }, [onResize]);
-
   return (
     <div ref={carouselRef} className="carousel">
       <div ref={carouselContentsRef} className="carousel__contents">
         <div
           ref={carouselContentsInnerRef}
-          style={{ transform: `translate3d(${translateX}, 0, 0)` }}
+          style={{ transform: `translate3d(${translateX}px, 0, 0)` }}
           className="carousel__contents__inner"
         >
           {children}
@@ -88,22 +69,56 @@ export default function Carousel({
       </div>
       {useControls && (
         <div className="carousel__controls">
-          <button
-            onClick={onPrevSlideClick}
-            className="carousel__controls__button button--prev"
-            disabled={pageIndex === 0}
-          >
-            &lt;
-          </button>
-          <button
-            onClick={onNextSlideClick}
-            className="carousel__controls__button button--next"
-            disabled={pageIndex === slideCount - 1}
-          >
-            &gt;
-          </button>
+          {slideCount > 1 && (
+            <CarouselControls
+              slideCount={slideCount}
+              currentPage={pageIndex}
+              onPrevButtonClick={onPrevSlideClick}
+              onNextButtonClick={onNextSlideClick}
+              onSlideThumbClick={(index) => {
+                setPageIndex(index);
+              }}
+            />
+          )}
         </div>
       )}
     </div>
+  );
+}
+
+function CarouselControls({
+  slideCount,
+  currentPage,
+  onPrevButtonClick,
+  onNextButtonClick,
+  onSlideThumbClick,
+}: ICarouselControlsProps) {
+  return (
+    <>
+      <button
+        onClick={onPrevButtonClick}
+        className="carousel__controls__button button--prev"
+        disabled={currentPage === 0}
+      >
+        &lt;
+      </button>
+      {Array.from(new Array(slideCount), (_, i) => (
+        <span
+          key={i}
+          className={classNames([
+            "carousel__controls__thumb",
+            { "thumb--active": currentPage === i },
+          ])}
+          onClick={() => onSlideThumbClick(i)}
+        ></span>
+      ))}
+      <button
+        onClick={onNextButtonClick}
+        className="carousel__controls__button button--next"
+        disabled={currentPage === slideCount - 1}
+      >
+        &gt;
+      </button>
+    </>
   );
 }
