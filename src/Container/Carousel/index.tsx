@@ -1,6 +1,7 @@
 import Carousel from "@/Components/Carousel";
 import Novel from "@/Components/Carousel/Novel";
 import { useEffect, useState } from "react";
+import { throttle } from "lodash-es";
 import "./index.scss";
 
 export default function CarouselContainer() {
@@ -21,16 +22,23 @@ export default function CarouselContainer() {
     ));
   };
   useEffect(() => {
-    const handleWindowResize = () => {
-      const windowInnerWidth = window.innerWidth;
-      if (windowInnerWidth > 1500) {
-        setNovelCountPerSlide(4);
-        setNovelCountPerSlide2(6);
-      } else {
-        setNovelCountPerSlide(3);
-        setNovelCountPerSlide2(5);
-      }
-    };
+    const handleWindowResize = throttle(
+      () => {
+        const windowInnerWidth = window.innerWidth;
+        if (windowInnerWidth > 1500) {
+          setNovelCountPerSlide(4);
+          setNovelCountPerSlide2(6);
+        } else {
+          setNovelCountPerSlide(3);
+          setNovelCountPerSlide2(5);
+        }
+      },
+      150,
+      {
+        leading: true,
+        trailing: true,
+      },
+    );
     window.addEventListener("resize", handleWindowResize);
     handleWindowResize();
     return () => {

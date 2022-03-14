@@ -53,6 +53,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:12.1.2"],\
             ["@testing-library/react-hooks", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.0.2"],\
             ["@types/jest", "npm:27.4.1"],\
+            ["@types/lodash-es", "npm:4.17.6"],\
             ["@types/node", "npm:17.0.10"],\
             ["@types/prettier", "npm:2.4.4"],\
             ["@types/react", "npm:17.0.38"],\
@@ -88,6 +89,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["immer", "npm:9.0.7"],\
             ["jest", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:27.5.1"],\
             ["lint-staged", "npm:12.1.7"],\
+            ["lodash-es", "npm:4.17.21"],\
             ["mini-css-extract-plugin", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:2.4.5"],\
             ["node-notifier", "npm:10.0.0"],\
             ["postcss", "npm:8.4.5"],\
@@ -9133,6 +9135,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/lodash", [\
+        ["npm:4.14.179", {\
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.179-cf476a29f8-71faa0c807.zip/node_modules/@types/lodash/",\
+          "packageDependencies": [\
+            ["@types/lodash", "npm:4.14.179"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/lodash-es", [\
+        ["npm:4.17.6", {\
+          "packageLocation": "./.yarn/cache/@types-lodash-es-npm-4.17.6-fd5abbdc74-9bd239dd52.zip/node_modules/@types/lodash-es/",\
+          "packageDependencies": [\
+            ["@types/lodash-es", "npm:4.17.6"],\
+            ["@types/lodash", "npm:4.14.179"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/mdast", [\
         ["npm:3.0.10", {\
           "packageLocation": "./.yarn/cache/@types-mdast-npm-3.0.10-9e9c39e4a4-3f587bfc0a.zip/node_modules/@types/mdast/",\
@@ -10389,6 +10410,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:12.1.2"],\
             ["@testing-library/react-hooks", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:7.0.2"],\
             ["@types/jest", "npm:27.4.1"],\
+            ["@types/lodash-es", "npm:4.17.6"],\
             ["@types/node", "npm:17.0.10"],\
             ["@types/prettier", "npm:2.4.4"],\
             ["@types/react", "npm:17.0.38"],\
@@ -10424,6 +10446,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["immer", "npm:9.0.7"],\
             ["jest", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:27.5.1"],\
             ["lint-staged", "npm:12.1.7"],\
+            ["lodash-es", "npm:4.17.21"],\
             ["mini-css-extract-plugin", "virtual:ff3673bd79f99c7aca498a094f29bbe334c706ffab27979527e187594d2c5222680208a7092d910bc52efb3bdfe9bd82b9b50d3c5399c565182e6e632b325920#npm:2.4.5"],\
             ["node-notifier", "npm:10.0.0"],\
             ["postcss", "npm:8.4.5"],\
@@ -19602,6 +19625,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/lodash-npm-4.17.21-6382451519-eb835a2e51.zip/node_modules/lodash/",\
           "packageDependencies": [\
             ["lodash", "npm:4.17.21"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash-es", [\
+        ["npm:4.17.21", {\
+          "packageLocation": "./.yarn/cache/lodash-es-npm-4.17.21-b45832dfce-05cbffad6e.zip/node_modules/lodash-es/",\
+          "packageDependencies": [\
+            ["lodash-es", "npm:4.17.21"]\
           ],\
           "linkType": "HARD"\
         }]\

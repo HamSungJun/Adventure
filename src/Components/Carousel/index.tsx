@@ -7,6 +7,7 @@ import {
 } from "react";
 import { ICarouselControlsProps, ICarouselProps } from "./types";
 import classNames from "classnames";
+import { debounce } from "lodash-es";
 import "./index.scss";
 
 export default function Carousel({
@@ -45,6 +46,23 @@ export default function Carousel({
       setTranslateX(slideItem.offsetLeft * -1);
     }
   }, []);
+
+  useEffect(() => {
+    const onWindowResize = debounce(
+      () => {
+        moveSlideToView(pageIndex);
+      },
+      300,
+      {
+        leading: false,
+        trailing: true,
+      },
+    );
+    window.addEventListener("resize", onWindowResize);
+    return () => {
+      window.removeEventListener("resize", onWindowResize);
+    };
+  }, [moveSlideToView, pageIndex]);
 
   useEffect(() => {
     if (isRefsInitialized([carouselContentsInnerRef])) {
