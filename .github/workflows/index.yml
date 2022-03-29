@@ -26,8 +26,8 @@ jobs:
       - name: Corepack Enable
         run: corepack enable
 
-      - name: Yarn Set Version
-        run: yarn set version yarn/releases/yarn-3.2.0.cjs
+      - name: Yarn Install
+        run: yarn install --immutable --immutable-cache
 
       - name: Yarn Project Validate
         run: yarn run validate
