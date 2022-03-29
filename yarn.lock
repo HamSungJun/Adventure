@@ -4524,7 +4524,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/babel__core@npm:^7.0.0, @types/babel__core@npm:^7.1.14":
+"@types/babel__core@npm:^7.0.0, @types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.1.19":
   version: 7.1.19
   resolution: "@types/babel__core@npm:7.1.19"
   dependencies:
@@ -5501,6 +5501,7 @@ __metadata:
     "@storybook/react": 6.4.9
     "@testing-library/react": 12.1.2
     "@testing-library/react-hooks": 7.0.2
+    "@types/babel__core": ^7.1.19
     "@types/jest": 27.4.1
     "@types/node": 17.0.10
     "@types/prettier": 2
