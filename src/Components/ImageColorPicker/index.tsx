@@ -53,20 +53,21 @@ export default function ImageColorPicker() {
       });
       imageSource.setAttribute(
         "src",
-        URL.createObjectURL(eventTarget.files![0]),
+        URL.createObjectURL(eventTarget.files![0])
       );
     }
   };
 
   const assembleUniqueColors = useCallback(
     (set: Set<string>) => {
+      console.log(set);
       setUniqueColors(new Set([...uniqueColors, ...set]));
     },
-    [uniqueColors],
+    [uniqueColors]
   );
 
   const onResetImageAndCanvas = (
-    event: React.MouseEvent<HTMLButtonElement>,
+    event: React.MouseEvent<HTMLButtonElement>
   ) => {
     if (inputRef.current) {
       inputRef.current.value = "";

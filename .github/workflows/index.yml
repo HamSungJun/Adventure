@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       # 현재 브랜치의 소스코드를 가져옵니다.

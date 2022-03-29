@@ -18,17 +18,17 @@ export default class ColorPalette extends Color {
   }
   getCSSHSLColorMatrix() {
     return this.getColorMatrix().map((colorMatrixRow) =>
-      colorMatrixRow.map((color) => color.toCSSHSLString()),
+      colorMatrixRow.map((color) => color.toCSSHSLString())
     );
   }
   getCSSHEXColorMatrix() {
     return this.getColorMatrix().map((colorMatrixRow) =>
-      colorMatrixRow.map((color) => color.toCSSHEXString()),
+      colorMatrixRow.map((color) => color.toCSSHEXString())
     );
   }
   getCSSRGBColorMatrix() {
     return this.getColorMatrix().map((colorMatrixRow) =>
-      colorMatrixRow.map((color) => color.toCSSRGBString()),
+      colorMatrixRow.map((color) => color.toCSSRGBString())
     );
   }
 }
