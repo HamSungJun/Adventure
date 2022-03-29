@@ -26,8 +26,8 @@ jobs:
       - name: Corepack Enable
         run: corepack enable
 
-      - name: Yarn Set Version From Sources
-        run: yarn set version from sources
+      - name: Yarn Set Version
+        run: yarn set version ./yarn/releases/yarn-3.2.0.cjs
 
       - name: Yarn Project Validate
         run: yarn run validate
