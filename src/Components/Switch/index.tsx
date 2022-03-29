@@ -17,13 +17,13 @@ export default function Switch({
     () => ({
       backgroundColor: checked ? onTrackColor : offTrackColor,
     }),
-    [checked, onTrackColor, offTrackColor]
+    [checked, onTrackColor, offTrackColor],
   );
   const computedBallStyles = useMemo(
     () => ({
       backgroundColor: checked ? onBallColor : offBallColor,
     }),
-    [checked, onBallColor, offBallColor]
+    [checked, onBallColor, offBallColor],
   );
   return (
     <button

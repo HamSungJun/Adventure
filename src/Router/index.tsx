@@ -19,7 +19,7 @@ export const routes: RouteConfig[] = [
     name: "Button",
     path: "/Button",
     Element: lazy(
-      () => import(/* webpackChunkName: "Button" */ "pages/Button")
+      () => import(/* webpackChunkName: "Button" */ "pages/Button"),
     ),
   },
   {
@@ -29,14 +29,14 @@ export const routes: RouteConfig[] = [
       () =>
         import(
           /* webpackChunkName: "ImageColorPicker" */ "pages/ImageColorPicker"
-        )
+        ),
     ),
   },
   {
     name: "Switch",
     path: "/Switch",
     Element: lazy(
-      () => import(/* webpackChunkName: "Switch" */ "pages/Switch")
+      () => import(/* webpackChunkName: "Switch" */ "pages/Switch"),
     ),
   },
   {
@@ -44,21 +44,21 @@ export const routes: RouteConfig[] = [
     path: "/CountDownTimer",
     Element: lazy(
       () =>
-        import(/* webpackChunkName: "CountDownTimer" */ "pages/CountDownTimer")
+        import(/* webpackChunkName: "CountDownTimer" */ "pages/CountDownTimer"),
     ),
   },
   {
     name: "PlayGround",
     path: "/PlayGround",
     Element: lazy(
-      () => import(/* webpackChunkName: "PlayGround" */ "pages/PlayGround")
+      () => import(/* webpackChunkName: "PlayGround" */ "pages/PlayGround"),
     ),
   },
   {
     name: "NotFound",
     path: "*",
     Element: lazy(
-      () => import(/* webpackChunkName: "NotFound" */ "pages/NotFound")
+      () => import(/* webpackChunkName: "NotFound" */ "pages/NotFound"),
     ),
   },
 ];

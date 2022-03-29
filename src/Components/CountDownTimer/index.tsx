@@ -35,7 +35,7 @@ export default function CountDownTimer({
         time -= refinedTime * timeSize;
         return acc;
       },
-      [] as number[]
+      [] as number[],
     );
     setDay(refinedTimes[0]);
     setHour(refinedTimes[1]);
@@ -69,7 +69,7 @@ export default function CountDownTimer({
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [repeat, onCountDown, onCountDownEnd]
+    [repeat, onCountDown, onCountDownEnd],
   );
 
   const startCountDownTime = useCallback(() => {
@@ -85,6 +85,11 @@ export default function CountDownTimer({
     if (autoStart) {
       startCountDownTime();
     }
+    return () => {
+      if (timerId) {
+        clearTimeout(timerId);
+      }
+    };
   }, [
     autoStart,
     repeat,
